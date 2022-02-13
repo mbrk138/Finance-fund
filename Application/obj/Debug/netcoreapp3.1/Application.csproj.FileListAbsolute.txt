@@ -1,0 +1,12 @@
+C:\New folder (2)\Finance-fund\Application\obj\Debug\netcoreapp3.1\Application.csproj.AssemblyReference.cache
+C:\New folder (2)\Finance-fund\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfoInputs.cache
+C:\New folder (2)\Finance-fund\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfo.cs
+C:\New folder (2)\Finance-fund\Application\obj\Debug\netcoreapp3.1\Application.csproj.CoreCompileInputs.cache
+C:\New folder (2)\Finance-fund\Application\bin\Debug\netcoreapp3.1\Application.deps.json
+C:\New folder (2)\Finance-fund\Application\bin\Debug\netcoreapp3.1\Application.dll
+C:\New folder (2)\Finance-fund\Application\bin\Debug\netcoreapp3.1\Application.pdb
+C:\New folder (2)\Finance-fund\Application\bin\Debug\netcoreapp3.1\Domain.dll
+C:\New folder (2)\Finance-fund\Application\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\New folder (2)\Finance-fund\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete
+C:\New folder (2)\Finance-fund\Application\obj\Debug\netcoreapp3.1\Application.dll
+C:\New folder (2)\Finance-fund\Application\obj\Debug\netcoreapp3.1\Application.pdb
