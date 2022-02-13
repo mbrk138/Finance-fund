@@ -6176,11 +6176,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mohammad\\Pictures\\کیر خر\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\Mohammad\\Pictures\\کیر خر\\Application\\Application.csproj",
+      "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\Mohammad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mohammad\\Pictures\\کیر خر\\Application\\obj\\",
+      "outputPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mohammad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6197,8 +6197,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Mohammad\\Pictures\\کیر خر\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mohammad\\Pictures\\کیر خر\\Domain\\Domain.csproj"
+            "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj"
             }
           }
         }

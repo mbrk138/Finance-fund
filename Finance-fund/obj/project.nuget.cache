@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FmTOmcBeOc/7yoV7B3+WZvarDOgeHahTs02CJViZX4pCUT823TU4Lpp4AArgwr6K+ILUIP/GeiBckeDMIzP5CA==",
+  "dgSpecHash": "0wPpmKoaIRmZY7dUfsCdDuMQySmlRXgGbCy2MUXgJhaRWH3TwmBqzncgA//ZmVhIBPGw4RSycVshuNBGMjoe7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mohammad\\Pictures\\کیر خر\\Finance-fund\\Finance-fund.csproj",
+  "projectFilePath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Finance-fund\\Finance-fund.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mohammad\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
