@@ -13,3 +13,18 @@ C:\New folder (2)\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastruc
 C:\New folder (2)\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
 C:\New folder (2)\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
 C:\New folder (2)\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.genruntimeconfig.cache
+C:\New folder\Finance-fund\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.deps.json
+C:\New folder\Finance-fund\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.runtimeconfig.json
+C:\New folder\Finance-fund\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.runtimeconfig.dev.json
+C:\New folder\Finance-fund\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\New folder\Finance-fund\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\New folder\Finance-fund\Infrastructure\bin\Debug\netcoreapp3.1\Domain.dll
+C:\New folder\Finance-fund\Infrastructure\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\New folder\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.AssemblyReference.cache
+C:\New folder\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+C:\New folder\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+C:\New folder\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+C:\New folder\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CopyComplete
+C:\New folder\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
+C:\New folder\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\New folder\Finance-fund\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.genruntimeconfig.cache

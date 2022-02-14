@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Finance-fund\\Finance-fund.csproj": {}
+    "C:\\New folder\\Finance-fund\\Finance-fund\\Finance-fund.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj": {
+    "C:\\New folder\\Finance-fund\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\New folder\\Finance-fund\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Mohammad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\obj\\",
+        "projectPath": "C:\\New folder\\Finance-fund\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\New folder\\Finance-fund\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mohammad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj"
+              "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj"
               }
             }
           }
@@ -76,21 +76,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj": {
+    "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Mohammad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\obj\\",
+        "projectPath": "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\New folder\\Finance-fund\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mohammad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -136,21 +136,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Finance-fund\\Finance-fund.csproj": {
+    "C:\\New folder\\Finance-fund\\Finance-fund\\Finance-fund.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Finance-fund\\Finance-fund.csproj",
+        "projectUniqueName": "C:\\New folder\\Finance-fund\\Finance-fund\\Finance-fund.csproj",
         "projectName": "Finance-fund",
-        "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Finance-fund\\Finance-fund.csproj",
-        "packagesPath": "C:\\Users\\Mohammad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Finance-fund\\obj\\",
+        "projectPath": "C:\\New folder\\Finance-fund\\Finance-fund\\Finance-fund.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\New folder\\Finance-fund\\Finance-fund\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mohammad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,11 +164,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj"
+              "C:\\New folder\\Finance-fund\\Application\\Application.csproj": {
+                "projectPath": "C:\\New folder\\Finance-fund\\Application\\Application.csproj"
               },
-              "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Infrastructure\\Infrastructure.csproj"
+              "C:\\New folder\\Finance-fund\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\New folder\\Finance-fund\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -227,6 +227,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.17, 3.1.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -235,21 +241,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\New folder\\Finance-fund\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\New folder\\Finance-fund\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Mohammad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Infrastructure\\obj\\",
+        "projectPath": "C:\\New folder\\Finance-fund\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\New folder\\Finance-fund\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mohammad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -263,8 +269,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj"
+              "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj"
               }
             }
           }
@@ -319,7 +325,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

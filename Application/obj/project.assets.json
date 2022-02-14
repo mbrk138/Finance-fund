@@ -6171,19 +6171,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mohammad\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\New folder\\Finance-fund\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\Mohammad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Application\\obj\\",
+      "projectPath": "C:\\New folder\\Finance-fund\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\New folder\\Finance-fund\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mohammad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6197,8 +6197,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mohammad\\source\\repos\\Finance fund\\Domain\\Domain.csproj"
+            "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\New folder\\Finance-fund\\Domain\\Domain.csproj"
             }
           }
         }
@@ -6245,7 +6245,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
