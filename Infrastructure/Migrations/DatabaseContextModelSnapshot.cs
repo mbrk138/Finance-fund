@@ -27,13 +27,123 @@ namespace Infrastructure.Migrations
                     b.Property<string>("DayOfMonth")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("InstallmentCount")
+                        .HasColumnType("int");
+
                     b.Property<int>("LoanType")
                         .HasColumnType("int");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.ToTable("ActiveLoans");
+                });
+
+            modelBuilder.Entity("Domain.KeyLessEntity.ActiveLoanMore", b =>
+                {
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("DayOfMonth")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("InstallmentCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LoanType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NationalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("activeLoanMores");
+                });
+
+            modelBuilder.Entity("Domain.KeyLessEntity.DisActiveLoan", b =>
+                {
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("InstallmentCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LoanType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PayTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("disActiveLoans");
+                });
+
+            modelBuilder.Entity("Domain.KeyLessEntity.DisactiveLoanMore", b =>
+                {
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("InstallmentCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LoanType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NationalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PayTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("DisactiveLoanMores");
+                });
+
+            modelBuilder.Entity("Domain.KeyLessEntity.GetInstallment", b =>
+                {
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("InstallmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<long>("InstallmentNumber")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("IsPayed")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("PayDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReciptId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("getInstallments");
                 });
 
             modelBuilder.Entity("Domain.Models.CreditCard", b =>
@@ -47,6 +157,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("FundId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("OwnerName")
                         .HasColumnType("nvarchar(max)");
@@ -70,8 +183,8 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AdminId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("AdminName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FundName")
                         .HasColumnType("nvarchar(max)");
@@ -90,6 +203,16 @@ namespace Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Funds");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("380747af-995b-4bb0-8372-f974ced51e50"),
+                            AdminName = "test",
+                            FundName = "همکاران",
+                            FundSubmitDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "a6f55e0f-9cf0-46c2-8be9-5298779b5d24"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Installment", b =>
@@ -219,6 +342,12 @@ namespace Infrastructure.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("FundId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -258,6 +387,9 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
+                    b.Property<int>("userRoles")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -269,6 +401,24 @@ namespace Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "a6f55e0f-9cf0-46c2-8be9-5298779b5d24",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "87ab04c6-7887-4716-a287-0fee8bab923e",
+                            EmailConfirmed = false,
+                            FundId = new Guid("380747af-995b-4bb0-8372-f974ced51e50"),
+                            IsActive = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "12345",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "9b1c4cbf-c378-4d69-8446-a998833fd232",
+                            TwoFactorEnabled = false,
+                            UserName = "test",
+                            userRoles = 0
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

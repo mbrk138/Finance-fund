@@ -9,7 +9,7 @@ namespace Application.Commands.Loan
     public class AddLoanCommand : IRequest
     {
         public decimal Amount { get; set; }
-        public string UserId { get; set; }
+        public string UserId { get; set; } 
         /// <summary>
         /// چندم ماه باید واریز کنه 
         /// </summary>

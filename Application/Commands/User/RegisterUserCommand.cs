@@ -9,6 +9,7 @@ namespace Application.Commands.User
     public class RegisterUserCommand : CommandBase,  IRequest
     {
         public string PhoneNumber { get; set;  }
+        public string FundName { get; set; }
         public override bool Validate()
         {
             return new RegisterUserCommandValidator().Validate(this).IsValid;

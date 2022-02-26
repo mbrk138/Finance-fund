@@ -12,27 +12,32 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repository
 {
-    public class LoanRepository: GenericRepository<Loan>,ILoanRepository
+    public class LoanRepository: GenericRepositoryy<Loan>,ILoanRepository
     {
-        public LoanRepository(DatabaseContext context) : base(context) { }
+        public LoanRepository(DatabaseContext context) : base(context) { } 
 
-        /// <summary>
-        /// باید Asyncronouns شه
-        /// </summary>
-        public List<ActiveLoan> GetAllActive()
+
+        public List<DisActiveLoan> GetAllPayed(string userId)
         {
-            return _context.ActiveLoans.FromSqlRaw("select users.UserName,[Amount],[DayOfMonth],[LoanType]from[Vamioon].[dbo].[Loans] loan join[Vamioon].[dbo].[AspNetUsers] users on users.Id = loan.UserId where loan.Id = ANY(select[LoanId] from[Vamioon].[dbo].[Installments] where Installments.IsPayed = 0)").ToList();
+            return _context.disActiveLoans.FromSqlRaw($"select users.UserName,users.ProfilePicture,[Amount],[DayOfMonth],[LoanType],loan.InstallmentCount,(select top 1 [PayDate] from [dbo].[Installments] order by [PayDate] desc)as 'PayTime' from[Finance].[dbo].[Loans] loan join[Finance].[dbo].[AspNetUsers] users on users.Id = loan.UserId where 0 = Any( select installment.IsPayed from[Finance].[dbo].[Installments] installment where Installment.LoanId = loan.Id) And users.Id='{userId}'").ToList();
         }
 
-        /// <summary>
-        /// تاریخ تسویه هم برمیگردونه
-        /// که یک entity جدا میخواد
-        /// </summary>
-        public async Task<List<ActiveLoan>> GetAllPayed()
+        public List<DisactiveLoanMore> GetAllPayedMore(string userId) 
         {
-            return await _context.ActiveLoans.FromSqlRaw("select [UserName],[Amount],[DayOfMonth],[LoanType]from[dbo].[Loans] loan join[dbo].[AspNetUsers] users on users.Id = loan.UserIdwhere loan.Id = ANY(select[LoanId] from[dbo].[Installments] where Installments.IsPayed = 0)").ToListAsync();
-
+            return _context.DisactiveLoanMores.FromSqlRaw($"select users.UserName,users.ProfilePicture,users.NationalCode,users.PhoneNumber,loan.InstallmentCount,loan.Id loanId,[Amount],[DayOfMonth],[LoanType],(select top 1 [PayDate] from [dbo].[Installments] order by [PayDate] desc)as 'PayTime' from[Finance].[dbo].[Loans] loan join[Finance].[dbo].[AspNetUsers] users on users.Id = loan.UserId where 0 = Any( select installment.IsPayed from[Finance].[dbo].[Installments] installment where Installment.LoanId = loan.Id) And users.Id='{userId}'").ToList();
         }
+
+        public  List<ActiveLoanMore> GetAllActiveMore(string userId)
+        {
+            return _context.activeLoanMores.FromSqlRaw($"select users.UserName,users.ProfilePicture,users.NationalCode,users.PhoneNumber,loan.InstallmentCount,loan.Id loanId,[Amount],[DayOfMonth],[LoanType] from[Finance].[dbo].[Loans] loan join[Finance].[dbo].[AspNetUsers] users on users.Id = loan.UserId where 1 = All( select installment.IsPayed from[Finance].[dbo].[Installments] installment where Installment.LoanId = loan.Id) And users.Id='{userId}'").ToList();
+        }
+
+        public List<ActiveLoan> GetAllActive(string userId)
+        {
+            return _context.ActiveLoans.FromSqlRaw($"select users.UserName,users.ProfilePicture,loan.InstallmentCount,[Amount],[DayOfMonth],[LoanType] from[Finance].[dbo].[Loans] loan join[Finance].[dbo].[AspNetUsers] users on users.Id = loan.UserId where 1 = All( select installment.IsPayed from[Finance].[dbo].[Installments] installment where Installment.LoanId = loan.Id) And users.Id='{userId}'").ToList();
+        }
+
+
 
     }
 }

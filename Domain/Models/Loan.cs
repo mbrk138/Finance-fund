@@ -40,7 +40,7 @@ namespace Domain.Models
             for (int i = 0; i < InstallmentCount; i++)
             {
                 Installments.Add(new Installment(installmentTime, InstallmentAmount));
-                installmentTime.AddMonths(1);
+                installmentTime= installmentTime.AddMonths(1);
             }
         }
 

@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.GenericRepository
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepositoryy<T> : IGenericRepository<T> where T : class
     {
         /* context , dbset*/
         protected DatabaseContext _context;
         protected DbSet<T> dbSet;
-        public GenericRepository(DatabaseContext context)
+        public GenericRepositoryy(DatabaseContext context)
         {
             _context = context;
             dbSet = context.Set<T>();

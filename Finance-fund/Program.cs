@@ -19,6 +19,7 @@ namespace Finance_fund
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .UseUrls("http://*:5008")
                 .UseStartup<Startup>();
     }
 }

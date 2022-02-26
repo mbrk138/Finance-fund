@@ -1,47 +1,111 @@
 ﻿using Application.Commands.User;
 using Application.Services.Interfaces;
+using Domain.Helper;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
+using Application.Mappers;
+using Microsoft.Extensions.Configuration;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.Extensions.Options;
+using Domain.Enums;
 
 namespace Application.Services.Classes
 {
     public class IdentityService : IIdentityService
     {
-        private readonly UserManager<User> _manager;
+        private readonly JwtToken _jwtToken;
+        private readonly UserManager<User> _userManager;
         private static readonly HttpClient client = new HttpClient();
-        public IdentityService(UserManager<User> manager)
+        public IdentityService(UserManager<User> manager, IOptions<JwtToken> jwtToken)
         {
-            _manager = manager; 
+            _userManager = manager;
+            _jwtToken = jwtToken.Value;
         }
-        public Task<string> LoginAsync()
+        public async Task<string> LoginAsync(UserLoginCommand command)
         {
-            throw new NotImplementedException();
+            var user = await _userManager.Users.FirstOrDefaultAsync(f => f.UserName == command.UserName);
+            
+
+
+            if (user == null)
+                throw new Exception("نام وارد شده صحیح نمی باشد");
+
+            if (user.PasswordHash!=command.Password)
+                throw new Exception("رمز ورود اشتباه است");
+
+            var token = await GenerateToken(user.Id, user.userRoles,command);
+            return token;
+
+        }
+
+        private async Task<string> GenerateToken(string id,UserRoles roles, UserLoginCommand command)
+        {
+            var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtToken.Key));
+            var credentials = new SigningCredentials(secretkey, SecurityAlgorithms.HmacSha256);
+            var tokenOption = new JwtSecurityToken(
+                issuer: _jwtToken.Issuer,
+                claims: new List<Claim>
+                {
+                    new Claim(ClaimTypes.Role,roles.ToString()),
+                    new Claim("id",id)
+                },
+                expires: DateTime.Now.AddDays(15),
+                signingCredentials: credentials
+            );
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOption);
+            return tokenString;
         }
 
         public async Task RegisterAsync(RegisterUserCommand command)
         {
-            var user = await _manager.Users.FirstOrDefaultAsync(x => x.PhoneNumber == command.PhoneNumber);
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.PhoneNumber == command.PhoneNumber);
             if (user == null)
             {
-                user = new User(command.PhoneNumber);
-                var result = _manager.CreateAsync(user, user.PhoneNumber);
-
+                user = new User(command.PhoneNumber, command.FundName,UserRoles.Admin,"");
+                var result = _userManager.CreateAsync(user, user.PhoneNumber);
             }
 
-            var code = await _manager.GenerateChangePhoneNumberTokenAsync(user, user.PhoneNumber);
+            var code = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.PhoneNumber);
 
-            await SendSmsAsync(user.PhoneNumber, code);
-            
+            await SendSms(user.PhoneNumber, code);
+
         }
-        private  async Task SendSmsAsync (string phoneNumber, string code)
+        private async Task SendSms(string phoneNumber, string code)
         {
+            try
+            {
+
+                var values = new Dictionary<string, string> { { "PhoneNumber", phoneNumber }, { "Message", code } };
+
+                var response = await client.PostAsync("http://194.36.174.133:5002/api/Notification/add", values, new JsonMediaTypeFormatter());
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = response.Content.ReadAsStringAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+
+
+        private async Task SendSmsAsync(string phoneNumber, string code)
+        {
+
             try
             {
 

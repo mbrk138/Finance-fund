@@ -5,11 +5,15 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Claims;
+using Domain.Helper;
 
 namespace Finance_fund.Controllers
 {
     public class ApiController : ControllerBase
     {
+        protected UserInfo CurrentUser => (User.Identity as ClaimsIdentity).GetUserClaim();
+
         private IMediator _mediator;
 
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();

@@ -11,5 +11,8 @@ namespace Domain.KeyLessEntity
         public decimal Amount { get; set; }
         public string DayOfMonth { get; set; }
         public LoanType LoanType { get; set; }
+        public string ProfilePicture { get; set; }
+        public int InstallmentCount { get; set; }
+
     }
 }

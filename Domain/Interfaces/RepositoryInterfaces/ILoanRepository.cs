@@ -9,6 +9,9 @@ namespace Domain.Interfaces.RepositoryInterfaces
 {
     public interface ILoanRepository : IGenericRepository<Loan>
     {
-        List<ActiveLoan> GetAllActive();
+        List<ActiveLoan> GetAllActive(string userId);
+        List<DisActiveLoan> GetAllPayed(string userId);
+        List<DisactiveLoanMore> GetAllPayedMore(string userId);
+        List<ActiveLoanMore> GetAllActiveMore(string userId);
     }
 }

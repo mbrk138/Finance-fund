@@ -10,6 +10,9 @@ namespace Application.Services.Interfaces
     public interface ILoanService
     {
         Task AddLoan(AddLoanCommand command);
-        List<ActiveLoan> GetActiveLoans();
+        List<ActiveLoan> GetActiveLoans(string userId);
+        List<ActiveLoanMore> GetActiveLoansMore(string userId);
+        List<DisActiveLoan> GetDisactiveLoans(string userId);
+        List<DisactiveLoanMore> GetDisactiveLoansMore(string userId);
     }
 }

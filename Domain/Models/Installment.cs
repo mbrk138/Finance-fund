@@ -15,7 +15,7 @@ namespace Domain.Models
 
         public decimal Amount { get; set; }
         public Guid Id { get; private set; }
-        public string ReciptId { get; private set; }  
+        public string ReciptId { get; private set; }
         public bool IsPayed { get; private set; }
         /// <summary>
         /// تاریخ پرداخت 

@@ -9,6 +9,6 @@ namespace Application.Services.Interfaces
     public interface IIdentityService
     {
         Task RegisterAsync(RegisterUserCommand command);
-        Task<string> LoginAsync();
+        Task<string> LoginAsync(UserLoginCommand command);
     }
 }

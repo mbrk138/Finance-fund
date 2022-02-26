@@ -104,3 +104,10 @@ C:\New folder\Finance-fund\Finance-fund\obj\Debug\netcoreapp3.1\Finance-fund.csp
 C:\New folder\Finance-fund\Finance-fund\obj\Debug\netcoreapp3.1\Finance-fund.dll
 C:\New folder\Finance-fund\Finance-fund\obj\Debug\netcoreapp3.1\Finance-fund.pdb
 C:\New folder\Finance-fund\Finance-fund\obj\Debug\netcoreapp3.1\Finance-fund.genruntimeconfig.cache
+C:\New folder\Finance-fund\Finance-fund\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\New folder\Finance-fund\Finance-fund\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\New folder\Finance-fund\Finance-fund\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\New folder\Finance-fund\Finance-fund\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\New folder\Finance-fund\Finance-fund\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\New folder\Finance-fund\Finance-fund\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\New folder\Finance-fund\Finance-fund\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

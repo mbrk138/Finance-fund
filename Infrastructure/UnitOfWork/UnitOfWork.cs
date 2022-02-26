@@ -1,5 +1,7 @@
 ﻿using Domain.Interfaces;
 using Domain.Interfaces.RepositoryInterfaces;
+using Domain.Models;
+using Infrastructure.GenericRepository;
 using Infrastructure.Persist;
 using Infrastructure.Repository;
 using System;
@@ -17,10 +19,20 @@ namespace Infrastructure.UnitOfWork
             _context = context;
             Funds = new FundRepository(_context);
             Loan = new LoanRepository(_context);
+            Installment = new InstallmentRepository(_context);
+            transaction = new TransactionRepository(_context);
+            credit = new GenericRepositoryy<CreditCard>(_context);
         }
+
         public IFundRepository Funds { get; private set;  }
 
         public ILoanRepository Loan { get; private set; }
+
+        public IInstallmentRepository Installment { get; private set; }
+
+        public ITransactionRepository transaction { get; private set; }
+
+        public IGenericRepository<CreditCard> credit { get; private set; }
 
         public async Task CompleteAsync()
         {
