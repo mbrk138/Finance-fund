@@ -107,11 +107,14 @@ namespace Finance_fund
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseRouting();
+
+            app.UseCors("Policy");
 
             app.UseHttpsRedirection();
-            app.UseCors("Policy");
+           
             provider.MigrateDatabases();
-            app.UseRouting();
+            
 
             app.UseAuthorization();
 

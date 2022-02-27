@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Finance_fund.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")] 
     [ApiController]
     public class UsersController : ApiController
@@ -20,7 +21,6 @@ namespace Finance_fund.Controllers
             _identity = identityService;
         }
 
-        
         [HttpPost("Register-Admin")]
         public async Task<IActionResult> RegisterAsync([FromBody] RegisterUserCommand command)
         {
@@ -33,6 +33,7 @@ namespace Finance_fund.Controllers
             return OkResult(ApiMessage.Ok);
         }
 
+        [AllowAnonymous]
         [HttpPost("Login")]
         public async Task<IActionResult> LoginAsync([FromBody] UserLoginCommand command)
         {
