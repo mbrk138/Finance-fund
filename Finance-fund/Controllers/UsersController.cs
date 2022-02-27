@@ -1,5 +1,6 @@
 ﻿using Application.Commands.User;
 using Application.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,9 +10,10 @@ using System.Threading.Tasks;
 
 namespace Finance_fund.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")] 
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class UsersController : ApiController
     {
         private readonly IIdentityService _identity;

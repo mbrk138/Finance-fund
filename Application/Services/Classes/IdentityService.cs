@@ -72,7 +72,7 @@ namespace Application.Services.Classes
             if (user == null)
             {
                 user = new User( command.FundName,UserRoles.Admin,command.UserName,command.Password);
-                var result = await _userManager.CreateAsync(user, user.PhoneNumber);
+                var result = await _userManager.CreateAsync(user, user.PasswordHash);
             }
 
 
