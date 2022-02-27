@@ -8,7 +8,8 @@ namespace Application.Commands.User
 {
     public class RegisterUserCommand : CommandBase,  IRequest
     {
-        public string PhoneNumber { get; set;  }
+        public string UserName { get; set; }
+        public string Password { get; set; }    
         public string FundName { get; set; }
         public override bool Validate()
         {

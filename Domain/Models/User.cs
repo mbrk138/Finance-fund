@@ -9,11 +9,12 @@ namespace Domain.Models
 {
     public class User : IdentityUser
     {
-        public User(string phoneNumber, string fundName, UserRoles roles, string fullname, string password = null)
+        public User(string fundName, UserRoles roles, string fullname, string password)
         {
             FullName = fullname;
-            PhoneNumber = phoneNumber;
+           // PhoneNumber = phoneNumber;
             FundId = Guid.NewGuid();
+            userRoles = roles;
             Funds = new List<Fund>();
             AddFund(fundName);
             PasswordHash = password;

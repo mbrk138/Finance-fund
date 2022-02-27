@@ -5,5 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>Finance_fund</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\New folder\Finance-fund\Finance-fund\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

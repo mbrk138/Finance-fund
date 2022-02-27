@@ -26,7 +26,7 @@ namespace Vamioon.Controllers
             _loanService = loanService;
         }
         
-        [HttpGet("Active")]
+        [HttpGet("Disactive")]
         public async Task<IActionResult> GetActiveLoansAsync()
         {
             if (CurrentUser.Roles == UserRoles.Member.ToString())
@@ -35,8 +35,8 @@ namespace Vamioon.Controllers
             var activeLoans =await Mediator.Send(new ActiveLoanQuery { UserId = CurrentUser.Id });
             return OkResult(ApiMessage.Ok, activeLoans);
         }
-        
-        [HttpGet("Active-More")]
+
+        [HttpGet("Disactive-More")]
         public async Task<IActionResult> GetMoreActiveLoansAsync()
         {
             if (CurrentUser.Roles == UserRoles.Member.ToString())
@@ -45,8 +45,8 @@ namespace Vamioon.Controllers
             var activeLoans =await Mediator.Send(new ActiveLoaneMoreQuery { UserId = CurrentUser.Id });
             return OkResult(ApiMessage.Ok, activeLoans);
         }
-        
-        [HttpGet("Disactive")]
+
+        [HttpGet("Active")]
         public async Task<IActionResult> GetDisActiveLoansAsync()
         {
             if (CurrentUser.Roles == UserRoles.Member.ToString())
@@ -56,7 +56,7 @@ namespace Vamioon.Controllers
             return OkResult(ApiMessage.Ok, activeLoans);
         }
         
-        [HttpGet("Disactive-More")]
+        [HttpGet("Active-More")]
         public async Task<IActionResult> GetMoreDisActiveLoansAsync()
         {
             if (CurrentUser.Roles==UserRoles.Member.ToString())

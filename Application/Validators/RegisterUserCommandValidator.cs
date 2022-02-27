@@ -10,10 +10,10 @@ namespace Application.Validators
     {
         public RegisterUserCommandValidator()
         {
-            RuleFor(x => x.PhoneNumber)
-            .NotNull().WithMessage("شماره تلفن نمیتواند خالی باشد ")
-            .MaximumLength(11).WithMessage("شماره تلفن حداکثر 11 رقم ")
-            .MinimumLength(11).WithMessage("شماره تلفن حداقل 11 رقم ");
+            //RuleFor(x => x.PhoneNumber)
+            //.NotNull().WithMessage("شماره تلفن نمیتواند خالی باشد ")
+            //.MaximumLength(11).WithMessage("شماره تلفن حداکثر 11 رقم ")
+            //.MinimumLength(11).WithMessage("شماره تلفن حداقل 11 رقم ");
 
 
         }

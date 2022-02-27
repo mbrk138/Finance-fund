@@ -68,16 +68,13 @@ namespace Application.Services.Classes
 
         public async Task RegisterAsync(RegisterUserCommand command)
         {
-            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.PhoneNumber == command.PhoneNumber);
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == command.UserName);
             if (user == null)
             {
-                user = new User(command.PhoneNumber, command.FundName,UserRoles.Admin,"");
-                var result = _userManager.CreateAsync(user, user.PhoneNumber);
+                user = new User( command.FundName,UserRoles.Admin,command.UserName,command.Password);
+                var result = await _userManager.CreateAsync(user, user.PhoneNumber);
             }
 
-            var code = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.PhoneNumber);
-
-            await SendSms(user.PhoneNumber, code);
 
         }
         private async Task SendSms(string phoneNumber, string code)

@@ -20,10 +20,13 @@ namespace Finance_fund.Controllers
             _identity = identityService;
         }
 
-        [AllowAnonymous]
+        
         [HttpPost("Register-Admin")]
         public async Task<IActionResult> RegisterAsync([FromBody] RegisterUserCommand command)
         {
+            if (CurrentUser.Roles!= "SuperAdmin")    
+                return BadReq("دسترسی به این بخش فقط برای ادمین اصلی میباشد");
+
             command.Validate();
 
             await _identity.RegisterAsync(command);
