@@ -18,18 +18,21 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.Extensions.Options;
 using Domain.Enums;
+using Domain.Interfaces;
 
 namespace Application.Services.Classes
 {
     public class IdentityService : IIdentityService
     {
+        private readonly IGenericRepository<User> _repository;
         private readonly JwtToken _jwtToken;
         private readonly UserManager<User> _userManager;
         private static readonly HttpClient client = new HttpClient();
-        public IdentityService(UserManager<User> manager, IOptions<JwtToken> jwtToken)
+        public IdentityService(UserManager<User> manager, IOptions<JwtToken> jwtToken, IGenericRepository<User> repository)
         {
             _userManager = manager;
             _jwtToken = jwtToken.Value;
+            _repository = repository;
         }
         public async Task<string> LoginAsync(UserLoginCommand command)
         {
@@ -40,7 +43,7 @@ namespace Application.Services.Classes
             if (user == null)
                 throw new Exception("نام وارد شده صحیح نمی باشد");
 
-            if (user.PasswordHash!=command.Password)
+            if (user.Password!=command.Password)
                 throw new Exception("رمز ورود اشتباه است");
 
             var token = await GenerateToken(user.Id, user.userRoles,command);
@@ -68,12 +71,20 @@ namespace Application.Services.Classes
 
         public async Task RegisterAsync(RegisterUserCommand command)
         {
-            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == command.UserName);
-            if (user == null)
-            {
-                user = new User( command.FundName,UserRoles.Admin,command.UserName,command.Password);
-                var result = await _userManager.CreateAsync(user, user.PasswordHash);
-            }
+            var userrr= await _repository.GetAll();
+            var match= userrr.ToList().Where(u => u.UserName == command.UserName).ToList();
+            if (match.Any())
+                throw new Exception("match name Found");
+
+            await _repository.AddAsync(new User(command.FundName, UserRoles.Admin, command.UserName, command.Password));
+            await _repository.Complete();
+            
+            //var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == command.UserName);
+            //if (user == null)
+            //{
+            //    user = new User( command.FundName,UserRoles.Admin,command.UserName,command.Password);
+            //    var result = await _userManager.CreateAsync(user, user.Password);
+            //}
 
 
         }

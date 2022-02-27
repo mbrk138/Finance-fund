@@ -28,6 +28,11 @@ namespace Infrastructure.GenericRepository
             return true;
         }
 
+        public async Task Complete()
+        {
+            await _context.SaveChangesAsync();
+        }
+
         public virtual async  Task<bool> DeleteAsync(Guid id)
         {
             var result = await dbSet.FindAsync(id);

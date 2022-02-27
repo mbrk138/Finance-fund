@@ -4,14 +4,16 @@ using Infrastructure.Persist;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220227164250_qqq")]
+    partial class qqq
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -207,11 +209,11 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d79fb832-f949-4bfe-ab8f-d586876944d1"),
+                            Id = new Guid("fe95365e-6a69-48de-80c0-6f5ac9d074ba"),
                             AdminName = "test",
                             FundName = "همکاران",
-                            FundSubmitDate = new DateTime(2022, 2, 27, 20, 14, 0, 934, DateTimeKind.Local).AddTicks(1333),
-                            UserId = "1e1a7f1c-046a-4b4c-b691-200d8785ce3a"
+                            FundSubmitDate = new DateTime(2022, 2, 27, 20, 12, 50, 55, DateTimeKind.Local).AddTicks(9527),
+                            UserId = "c6cce804-26ae-40ba-8675-a2ac8992ce3c"
                         });
                 });
 
@@ -408,16 +410,16 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1e1a7f1c-046a-4b4c-b691-200d8785ce3a",
+                            Id = "c6cce804-26ae-40ba-8675-a2ac8992ce3c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0c49b173-3a7e-400a-8515-ce17ef01dafe",
+                            ConcurrencyStamp = "e2c50fa1-de26-450b-9857-d47fa875ced1",
                             EmailConfirmed = false,
-                            FundId = new Guid("d79fb832-f949-4bfe-ab8f-d586876944d1"),
+                            FundId = new Guid("fe95365e-6a69-48de-80c0-6f5ac9d074ba"),
                             IsActive = false,
                             LockoutEnabled = false,
-                            Password = "12345",
+                            PasswordHash = "12345",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d092705a-ace2-445d-90fc-64bbcf2ce073",
+                            SecurityStamp = "ec3378a3-2e4b-419b-aad5-22af5f6f957d",
                             TwoFactorEnabled = false,
                             UserName = "test",
                             userRoles = 0

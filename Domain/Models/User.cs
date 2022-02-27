@@ -11,13 +11,13 @@ namespace Domain.Models
     {
         public User(string fundName, UserRoles roles, string fullname, string password)
         {
-            FullName = fullname;
+            UserName = fullname;
            // PhoneNumber = phoneNumber;
             FundId = Guid.NewGuid();
             userRoles = roles;
             Funds = new List<Fund>();
             AddFund(fundName);
-            PasswordHash = password;
+            Password = password;
         }
         public void UpdateProfile(string fullName, string nationalCode, string profilePicture)
         {
@@ -26,6 +26,7 @@ namespace Domain.Models
             ProfilePicture = profilePicture;
         }
 
+        public string Password { get; set; }    
         public string FullName { get; private set; }
         public string NationalCode { get; private set; }
         public string ProfilePicture { get; private set; }

@@ -32,7 +32,7 @@ namespace Infrastructure.Persist
             base.OnModelCreating(modelBuilder);
             string id = Guid.NewGuid().ToString();
             Guid fundId = Guid.NewGuid();
-            modelBuilder.Entity<User>().HasData(new User() { UserName = "test", userRoles = Domain.Enums.UserRoles.SuperAdmin, Id = id, PasswordHash = "12345", FundId = fundId });
+            modelBuilder.Entity<User>().HasData(new User() { UserName = "test", userRoles = Domain.Enums.UserRoles.SuperAdmin, Id = id, Password = "12345", FundId = fundId }); 
             modelBuilder.Entity<Fund>().HasData(new Fund() { Id = fundId, FundName = "همکاران", AdminName = "test", UserId = id,FundSubmitDate=DateTime.Now });
 
             modelBuilder.Entity<ActiveLoan>(
